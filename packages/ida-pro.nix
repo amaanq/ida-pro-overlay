@@ -32,6 +32,8 @@ pkgs.stdenv.mkDerivation rec {
     qt6.wrapQtAppsHook
   ];
 
+  autoPatchelfIgnoreMissingDeps = [ "libQt5EglFSDeviceIntegration.so.5" ];
+
   # We just get a runfile in $src, so no need to unpack it.
   dontUnpack = true;
 
